@@ -1,6 +1,6 @@
 <!--- Project Logo --->
-
-<a href=""><img src="" alt=""></a>
+#LRBench
+<!--- a href=""><img src="" alt=""></a --->
 -----------------
 [![GitHub license](https://img.shields.io/badge/license-apache-green.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Version](https://img.shields.io/badge/version-0.0.1-red.svg?style=flat)]()
@@ -10,6 +10,8 @@
 [![Coverage Status]()]()
 --->
 ## Introduction
+
+A learning rate benchmarking tool.
 
 * item 1
 * item 2
@@ -34,7 +36,7 @@
 
 ## Contributors
 
-See the [people page](https://github.com/git-disl/project_template/graphs/contributors) for the full listing of contributors.
+See the [people page](https://github.com/git-disl/LRBench/graphs/contributors) for the full listing of contributors.
 
 ## License
 
