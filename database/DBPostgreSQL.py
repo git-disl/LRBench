@@ -38,11 +38,11 @@ class DBPostgreSQL(DBDriver):
         except Exception as e:
             print(e)
             
-    #DeepLR APIs
-    def insertLR(self, dataset, network, lrPolicy, k0=None, k1=None, gamma=None, p=None, l=None):
+    #LRBench APIs
+    def insertLR(self, dataset, network, lrPolicy):
         raise NotImplementedError
         tmpCursor = self.execute("SELECT EXISTS(SELECT * FROM " + lrPolicy + ")")
-        if !tmpCursor.fetchone()[0]:
+        if not tmpCursor.fetchone()[0]:
             tmpCursor.execute("CREATE TABLE")
         tmpCursor.execute("INSERT)
                           
@@ -52,9 +52,9 @@ class DBPostgreSQL(DBDriver):
 
 # Module Test
 if __name__ == "__main__":
-    db = DBPostgreSQL('deeplr', 'yanzhaowu', 'localhost', '123456')
-    print db.execute("""CREATE TABLE MODULETEST (name char(40));""")
-    print db.execute("""SELECT * FROM MODULETEST""").fetchall()
-    print db.execute("""INSERT INTO MODULETEST (name) VALUES ('deeplr')""")
-    print db.execute("""SELECT * FROM MODULETEST""").fetchall()
-    print db.execute("""DROP TABLE MODULETEST""")
+    db = DBPostgreSQL('lrbench', 'yanzhaowu', 'localhost', '123456')
+    print(db.execute("""CREATE TABLE MODULETEST (name char(40));"""))
+    print(db.execute("""SELECT * FROM MODULETEST""").fetchall())
+    print(db.execute("""INSERT INTO MODULETEST (name) VALUES ('lrbench')"""))
+    print(db.execute("""SELECT * FROM MODULETEST""").fetchall())
+    print(db.execute("""DROP TABLE MODULETEST"""))

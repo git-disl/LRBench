@@ -18,8 +18,8 @@ class DBDriver(object):
     def execute(self, _sqlStateMent):
         raise NotImplementedError
     
-    # DeepLR APIs    
-    def insertLR(self, dataset, network, lrPolicy, k0=None, k1=None, gamma=None, p=None, l=None):
+    # LRBench APIs    
+    def insertLR(self, dataset, network, lrPolicy):
         raise NotImplementedError
         
     def queryLRs(self, dataset, network, lrPolicy):

@@ -1,3 +1,5 @@
 numpy
 # for plot learning rates
 matplotlib
+# for the Caffe example
+jupyter
