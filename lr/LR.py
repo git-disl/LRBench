@@ -1,7 +1,7 @@
 # Abstract API for LRs
 
 from LRfunctions import getLRFunction
-from utility import *
+from ..utility import *
 
 class LR(object):
     def __init__(self, _lrParam):
