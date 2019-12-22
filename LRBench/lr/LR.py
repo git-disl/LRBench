@@ -1,6 +1,6 @@
 # Abstract API for LRs
 
-from LRfunctions import getLRFunction
+from .LRfunctions import getLRFunction
 from ..utility import *
 
 class LR(object):

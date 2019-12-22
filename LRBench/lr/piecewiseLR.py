@@ -1,5 +1,5 @@
-from LR import LR
-from LRfunctions import getLRFunction
+from .LR import LR
+from .LRfunctions import getLRFunction
 from ..utility import trimLRparamStr
 
 class piecewiseLR(LR):
