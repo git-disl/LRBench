@@ -41,7 +41,7 @@ If you find this tool useful, please cite the following paper:
 
 
 ## Installation
-
+    pip install LRBench
 
 ## Supported Platforms
 
