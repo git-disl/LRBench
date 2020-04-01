@@ -18,8 +18,9 @@ class compute_mertics:
 
 	def add_robustness(self,project_dict,model_fit,score):
 		#robustness
-  		train_accuracy=model_fit.history['accuracy'][0]
-  		robustness=score[1]-train_accuracy
+  		train_loss=score[0]
+                test_loss = model_fit.history['loss'][-1]
+  		robustness= test_loss-train_loss
 		project_dict['robustness']=robustness
 		return project_dict
 
