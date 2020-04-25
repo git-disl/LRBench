@@ -1,0 +1,146 @@
+In LR form processing.
+Form is valid
+Selected dataset: cifar10
+Selected framework: keras
+Epoch distribution selected: [10]
+LR Policy distribution : [{'lrPolicy': 'FIX', 'k0': 0.1}, {'lrPolicy': 'STEP', 'k0': 1.0, 'gamma': 1.0, 'l': 1.0}]
+
+
+Calling main LR function
+Reached main LR function
+Batch size: 10
+Total num_of_epochs: 30
+Epoch distribution : [10]
+LR Policy distribution: [{'lrPolicy': 'FIX', 'k0': 0.1}, {'lrPolicy': 'STEP', 'k0': 1.0, 'gamma': 1.0, 'l': 1.0}]
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/30
+Learning rate for epoch: 1 is 0.1
+{'loss': 190.25040759390723, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 147.83520333560895, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 2/30
+Learning rate for epoch: 2 is 0.1
+{'loss': 160.01934226304755, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 137.7262685328354, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 3/30
+Learning rate for epoch: 3 is 0.1
+{'loss': 152.0378259062398, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 133.75421608818903, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 4/30
+Learning rate for epoch: 4 is 0.1
+{'loss': 147.81905494902526, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 129.74083926353924, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 5/30
+Learning rate for epoch: 5 is 0.1
+{'loss': 143.89073466959383, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 127.46592123714494, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 6/30
+Learning rate for epoch: 6 is 0.1
+{'loss': 141.32398731715907, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 125.5198828143838, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 7/30
+Learning rate for epoch: 7 is 0.1
+{'loss': 139.20168037532653, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 123.06375508249542, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 8/30
+Learning rate for epoch: 8 is 0.1
+{'loss': 136.1392012557747, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 121.69709989759657, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 9/30
+Learning rate for epoch: 9 is 0.1
+{'loss': 134.05042999078614, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 120.61232465579187, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 10/30
+Learning rate for epoch: 10 is 0.1
+{'loss': 132.11819287940813, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 119.3159598833249, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 11/30
+Learning rate for epoch: 11 is 1.0
+{'loss': 125.48774056685598, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 109.37081132111726, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 12/30
+Learning rate for epoch: 12 is 1.0
+{'loss': 117.10805953176398, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 111.04049442432544, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 13/30
+Learning rate for epoch: 13 is 1.0
+{'loss': 110.01432320798514, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 104.55259605690286, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 14/30
+Learning rate for epoch: 14 is 1.0
+{'loss': 104.04529273325444, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 99.52886223498686, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 15/30
+Learning rate for epoch: 15 is 1.0
+{'loss': 98.27733466794986, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 114.62668115121348, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 16/30
+Learning rate for epoch: 16 is 1.0
+{'loss': 94.96107103802471, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 112.09664179955, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 17/30
+Learning rate for epoch: 17 is 1.0
+{'loss': 91.1208055336778, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 93.4264870631842, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 18/30
+Learning rate for epoch: 18 is 1.0
+{'loss': 83.84903615473225, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 106.46291850525655, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 19/30
+Learning rate for epoch: 19 is 1.0
+{'loss': 84.36530022724494, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 91.22189792585962, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 20/30
+Learning rate for epoch: 20 is 1.0
+{'loss': 81.75100164738232, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 93.83185511459538, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 21/30
+Learning rate for epoch: 21 is 1.0
+{'loss': 79.19491590730178, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 87.52493055367175, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 22/30
+Learning rate for epoch: 22 is 1.0
+{'loss': 76.00666171330785, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 97.3549397315508, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 23/30
+Learning rate for epoch: 23 is 1.0
+{'loss': 75.95436844368099, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 82.46774249606662, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 24/30
+Learning rate for epoch: 24 is 1.0
+{'loss': 71.83197639748776, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 86.83229396961353, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 25/30
+Learning rate for epoch: 25 is 1.0
+{'loss': 70.84290715267784, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 83.67395855467997, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 26/30
+Learning rate for epoch: 26 is 1.0
+{'loss': 70.22701181272973, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 81.38895359745732, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 27/30
+Learning rate for epoch: 27 is 1.0
+{'loss': 70.49390671201535, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 100.17221766342351, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 28/30
+Learning rate for epoch: 28 is 1.0
+{'loss': 68.89144631140742, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 78.4645696333897, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 29/30
+Learning rate for epoch: 29 is 1.0
+{'loss': 67.82602438911934, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 80.58891748498988, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Epoch : 30/30
+Learning rate for epoch: 30 is 1.0
+{'loss': 65.4406792608208, 'accuracy': 0.0, 'top_k_categorical_accuracy': 1.0, 'val_loss': 77.17196466893326, 'val_accuracy': 0.0, 'val_top_k_categorical_accuracy': 1.0}
+
+Computing the metrics : 
+Metrics are : {'model_framework': 'Keras', 'dataset_name': 'cifar10', 'model_params': 'lrPolicy_FIX+k0_0.1-lrPolicy_STEP+k0_1.0+gamma_1.0+l_1.0-AT-10', 'lr_policy': "['FIX', 'STEP']", 'robustness': -1.6175240436943596, 'top_1_accuracy': 0.0, 'top_5_accuracy': 1.0, 'average_confidence': 0, 'confidence_standard_deviation': 0, 'cdac': 0}
+
+Result added to database
+
+Completed training model
+Results mean::[67.05820330451516, 0.0, 1.0]
+Done!

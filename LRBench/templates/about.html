@@ -1,0 +1,22 @@
+{% extends "common.html" %} 
+{% load static %}
+
+{% block content %}
+
+{% block body %}
+
+<div class="container">
+
+	<p>
+		Hello!<br><br>
+		You can use Run LRBench to run Neural network models using customised LR scheduler. Just enter in the required parameters and let the model train!<br><br>
+
+		Use the below table for reference, while training the model. If you want to learrn more about learning rate scheduling, check this out : <a href="https://arxiv.org/pdf/1908.06477.pdf"> Demystify LR</a><br>
+
+		<img src="{% static 'lr_policy_table.png' %}">
+
+	</p>
+</div>
+
+{% endblock body %}
+{% endblock content %}

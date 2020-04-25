@@ -17,10 +17,9 @@ class compute_mertics:
 		return project_dict
 
 	def add_robustness(self,project_dict,model_fit,score):
-		#robustness
-  		train_loss=score[0]
-                test_loss = model_fit.history['loss'][-1]
-  		robustness= test_loss-train_loss
+		train_loss=score[0]
+		test_loss = model_fit.history['loss'][-1]
+		robustness= test_loss-train_loss
 		project_dict['robustness']=robustness
 		return project_dict
 
@@ -29,10 +28,9 @@ class compute_mertics:
   		project_dict['top_5_accuracy']=float(score[2])
   		return project_dict
 
-  	def add_confidence(self,project_dict,y_test,model_predict):
-  		import numpy as np
 
-		
+	def add_confidence(self,project_dict,y_test,model_predict):
+		import numpy as np
 		prediction_labels=np.argmax(model_predict,axis=1)
 
 		#getting the y labels into array 

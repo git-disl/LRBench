@@ -1,0 +1,57 @@
+<!-- This is  the template when user clicks the show results
+and the return page after the job is submitted, if user 
+does not press show results. 
+
+The page reads from the results text file, where 
+all the required logs are written. This is then displayed 
+every 3s. 
+ --> 
+{% extends "common.html" %} 
+{% block content %}
+
+{% block body %}
+<div class="container">
+<h4>Results/logs</h4>
+<div id= "results_div"></div>  
+</div>
+<br>
+
+<script type="text/javascript">
+
+  window.onload = function() {
+    show_logs()
+  };
+
+  function show_logs() {
+    var xmlhttp;
+    shouldAbort=false
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+        if(xmlhttp.responseText.includes("Done!"))
+        {
+          shouldAbort=true;
+        }
+        document.getElementById("results_div").innerHTML=xmlhttp.responseText.split('\n').join('<br/>');
+      }
+
+    }
+
+    var myInterval=setInterval(function() {
+
+      xmlhttp.open("POST","../static/results.txt",true);
+      if(shouldAbort)
+      {  
+          xmlhttp.abort();
+          clearInterval(myInterval);
+        }else
+        { 
+          xmlhttp.send();}
+        }, 3000);
+  }
+
+</script>
+
+{% endblock body %}
+{% endblock content %}

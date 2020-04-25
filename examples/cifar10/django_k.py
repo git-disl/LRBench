@@ -1,18 +1,17 @@
-'''Trains a simple convnet on the MNIST dataset.
-Gets to 99.25% test accuracy after 12 epochs
-(there is still a lot of margin for parameter tuning).
-16 seconds per epoch on a GRID K520 GPU.
-'''
+#This function is to give a rough outline of how to add 
+#result to django sql db. We perform django.setup(), 
+#then carry out the training as usual, and then 
+# compute the metrics to be added to DB. Finally 
+#the entry is added to the db
 
 # Modified from the https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py by Yanzhao Wu
 
-
-
-from __future__ import print_function
+# from __future__ import print_function
 
 import keras
 # from keras.datasets import mnist
 from keras.datasets import cifar10
+
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
@@ -27,8 +26,7 @@ django.setup()
 from keras.callbacks import LearningRateScheduler
 from LRBench.framework.keras.LearningRate import LearningRate
 from LRBench.lr.piecewiseLR import piecewiseLR
-# import psycopg2
-# epoch-based schedule. It is easy to obtain 99.35% (99.25% by defautl) accuracy with the following configuration:
+
 lrbenchLR = piecewiseLR([10,], [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1':6.0, 'l': 5},
                                   {'lrPolicy': 'FIX', 'k0': 0.0001}])
 

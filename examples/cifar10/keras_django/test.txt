@@ -1,0 +1,825 @@
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 554.814043963397, 'val_mae': 19.15894317626953, 'loss': 1164.4338412919649, 'mae': 27.628313}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 195.38460286458334, 'val_mae': 11.163307189941406, 'loss': 431.2872350356158, 'mae': 15.72068}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 142.13556200192298, 'val_mae': 9.322224617004395, 'loss': 221.44944191569513, 'mae': 11.2613125}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 102.26612194673514, 'val_mae': 7.524518013000488, 'loss': 153.71361208700174, 'mae': 9.335924}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 103.3465013857241, 'val_mae': 8.769728660583496, 'loss': 98.17636505221435, 'mae': 7.156882}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 103.31547141369478, 'val_mae': 8.768092155456543, 'loss': 148.26319049091163, 'mae': 10.217191}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 103.28644938527802, 'val_mae': 8.766563415527344, 'loss': 148.22123260025637, 'mae': 10.215327}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 103.25719395390263, 'val_mae': 8.765019416809082, 'loss': 148.18143510375597, 'mae': 10.213515}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 103.22944424476152, 'val_mae': 8.763557434082031, 'loss': 148.1413977714515, 'mae': 10.211748}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 103.20023383623288, 'val_mae': 8.762016296386719, 'loss': 148.10322615679573, 'mae': 10.210083}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 103.16905052279249, 'val_mae': 8.760371208190918, 'loss': 148.06324812945198, 'mae': 10.20829}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 103.14091755431376, 'val_mae': 8.758893013000488, 'loss': 148.02083905857782, 'mae': 10.20641}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 103.108235111943, 'val_mae': 8.757177352905273, 'loss': 147.981886636362, 'mae': 10.204677}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 103.07734435281635, 'val_mae': 8.755558013916016, 'loss': 147.9374806784993, 'mae': 10.202698}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 103.04505440040872, 'val_mae': 8.753865242004395, 'loss': 147.89484242536705, 'mae': 10.200853}
+
+Completed training model
+Results mean::[128.5387574738147, 9.317120552062988]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 15852.445457175925, 'val_mae': 115.9151840209961, 'loss': 22328.367994751356, 'mae': 138.92787}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 544.5257786880305, 'val_mae': 20.058691024780273, 'loss': 5078.611521623452, 'mae': 55.921192}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 379.2014243043499, 'val_mae': 15.65101432800293, 'loss': 303.69489831599657, 'mae': 13.585469}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 771.423132625627, 'val_mae': 23.000572204589844, 'loss': 369.32890428478134, 'mae': 15.957984}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 234.01689213882258, 'val_mae': 11.995327949523926, 'loss': 425.1717566144725, 'mae': 17.354042}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 234.01311596528984, 'val_mae': 11.995256423950195, 'loss': 176.222098383003, 'mae': 10.535328}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 234.0008369728371, 'val_mae': 11.9949369430542, 'loss': 176.21877036079903, 'mae': 10.535251}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 233.99281226264105, 'val_mae': 11.994732856750488, 'loss': 176.21215602414156, 'mae': 10.5350685}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 233.98438338291498, 'val_mae': 11.99453067779541, 'loss': 176.20781026314657, 'mae': 10.534967}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 233.97201067135657, 'val_mae': 11.994213104248047, 'loss': 176.20234297525033, 'mae': 10.534849}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 233.95596953968942, 'val_mae': 11.993800163269043, 'loss': 176.19566472765092, 'mae': 10.534689}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 233.94149959234545, 'val_mae': 11.993439674377441, 'loss': 176.18788418607446, 'mae': 10.534506}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 233.9213138156467, 'val_mae': 11.992916107177734, 'loss': 176.17972326131058, 'mae': 10.5343275}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 233.90231059510032, 'val_mae': 11.99244499206543, 'loss': 176.17003230044716, 'mae': 10.534115}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 233.88886910897713, 'val_mae': 11.992119789123535, 'loss': 176.16033581535882, 'mae': 10.533926}
+
+Completed training model
+Results mean::[230.63491043390013, 11.753344535827637]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 5857.069396219136, 'val_mean_absolute_error': 69.27422238573615, 'loss': 8614.18351665296, 'mean_absolute_error': 83.21230741329606}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 1061.3061945408951, 'val_mean_absolute_error': 24.19742320496359, 'loss': 3797.3293300191685, 'mean_absolute_error': 52.42479861114786}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 104.06239563741802, 'val_mean_absolute_error': 8.177156972296444, 'loss': 478.8758195575915, 'mean_absolute_error': 14.855376448793677}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 105.06224653455946, 'val_mean_absolute_error': 6.837939774548566, 'loss': 99.33793200796971, 'mean_absolute_error': 8.034011415652815}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 109.97112872276777, 'val_mean_absolute_error': 6.920832987184878, 'loss': 82.94930090180861, 'mean_absolute_error': 6.898313455906446}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 109.96749995667257, 'val_mean_absolute_error': 6.920675383673774, 'loss': 87.72874396356636, 'mean_absolute_error': 6.937194457364156}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 109.96357887173876, 'val_mean_absolute_error': 6.920506400826537, 'loss': 87.72631361167129, 'mean_absolute_error': 6.937122727326195}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 109.96034711672937, 'val_mean_absolute_error': 6.92036705252565, 'loss': 87.723583020662, 'mean_absolute_error': 6.937027321511378}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 109.95539686414931, 'val_mean_absolute_error': 6.920162159719585, 'loss': 87.72123513945115, 'mean_absolute_error': 6.936947679372025}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 109.95055266957225, 'val_mean_absolute_error': 6.919964690267304, 'loss': 87.717856008571, 'mean_absolute_error': 6.93683404450077}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 109.94460150636273, 'val_mean_absolute_error': 6.919723022131272, 'loss': 87.71443013288658, 'mean_absolute_error': 6.936715285475409}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 109.93835755336431, 'val_mean_absolute_error': 6.9194657890884965, 'loss': 87.7102709082258, 'mean_absolute_error': 6.936583888050942}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 109.9327650187928, 'val_mean_absolute_error': 6.919235824066916, 'loss': 87.70590383570999, 'mean_absolute_error': 6.936431500933857}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 109.92648682770906, 'val_mean_absolute_error': 6.918979303336438, 'loss': 87.70188204644265, 'mean_absolute_error': 6.936286583773492}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 109.91894757306135, 'val_mean_absolute_error': 6.918667387079309, 'loss': 87.69730322870308, 'mean_absolute_error': 6.936143529673479}
+
+Completed training model
+Results mean::[106.74057066674327, 7.725771511302275]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 347.01304362732685, 'val_mean_absolute_error': 13.51831551540045, 'loss': 475.2776761837419, 'mean_absolute_error': 16.69546282033064}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 236.23855496630256, 'val_mean_absolute_error': 11.353855933672117, 'loss': 308.10974546261247, 'mean_absolute_error': 13.931302938667983}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 311.5739192256221, 'val_mean_absolute_error': 13.57835073824282, 'loss': 219.5817654730735, 'mean_absolute_error': 11.633768325250584}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 122.72083715744961, 'val_mean_absolute_error': 8.71985567940606, 'loss': 203.44886055524134, 'mean_absolute_error': 11.327904917507349}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 160.33392993314766, 'val_mean_absolute_error': 9.329814569449718, 'loss': 125.60988951172253, 'mean_absolute_error': 8.868617407677712}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 160.2904251475393, 'val_mean_absolute_error': 9.328574469060074, 'loss': 154.21218036498078, 'mean_absolute_error': 9.426384280709659}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 160.24215086006825, 'val_mean_absolute_error': 9.327201766732298, 'loss': 154.17300900438622, 'mean_absolute_error': 9.425201969619136}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 160.19500261471595, 'val_mean_absolute_error': 9.325861977942196, 'loss': 154.12973891692266, 'mean_absolute_error': 9.42389266852624}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 160.14100034737294, 'val_mean_absolute_error': 9.324329929587282, 'loss': 154.08731149962813, 'mean_absolute_error': 9.422644706702453}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 160.09866587320963, 'val_mean_absolute_error': 9.323122413070113, 'loss': 154.040295509362, 'mean_absolute_error': 9.421215020466146}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 160.04462291576243, 'val_mean_absolute_error': 9.321581381338614, 'loss': 154.00137532237144, 'mean_absolute_error': 9.420241872592607}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 159.99268256293402, 'val_mean_absolute_error': 9.320103233243213, 'loss': 153.95368586678993, 'mean_absolute_error': 9.418726150465455}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 159.9351481684932, 'val_mean_absolute_error': 9.318479908837212, 'loss': 153.90711686928574, 'mean_absolute_error': 9.417320112694897}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 159.87511142683618, 'val_mean_absolute_error': 9.316775645738767, 'loss': 153.85691923253677, 'mean_absolute_error': 9.415848867812024}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 159.81639720775462, 'val_mean_absolute_error': 9.31511824808003, 'loss': 153.80443854081003, 'mean_absolute_error': 9.414317408582374}
+
+Completed training model
+Results mean::[159.4428513470818, 10.121376860375499]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 1872.3322151089892, 'val_mae': 41.37420654296875, 'loss': 3036.8554929373063, 'mae': 53.03954}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 117.73837440396532, 'val_mae': 8.57287883758545, 'loss': 404.83413672668644, 'mae': 15.136797}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 103.28886300546152, 'val_mae': 7.4261250495910645, 'loss': 114.18083383424363, 'mae': 8.336734}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 274.80285550341193, 'val_mae': 12.895133972167969, 'loss': 96.81445992767995, 'mae': 7.516466}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 84.73493166323061, 'val_mae': 6.776828289031982, 'loss': 163.38407274370223, 'mae': 10.164524}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 84.73355526394315, 'val_mae': 6.776678562164307, 'loss': 91.0458582798394, 'mae': 7.4880514}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 84.73208085990247, 'val_mae': 6.776511192321777, 'loss': 91.04111696249191, 'mae': 7.487748}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 84.73047265888732, 'val_mae': 6.7763142585754395, 'loss': 91.03586738987973, 'mae': 7.487442}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 84.7289363955274, 'val_mae': 6.776159286499023, 'loss': 91.0295171117635, 'mae': 7.4870176}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 84.72751553853352, 'val_mae': 6.7760162353515625, 'loss': 91.02470801858341, 'mae': 7.4866667}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 84.72591548495822, 'val_mae': 6.775837421417236, 'loss': 91.02036407931301, 'mae': 7.486421}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 84.7243686016695, 'val_mae': 6.775677680969238, 'loss': 91.01461678318933, 'mae': 7.486078}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 84.72220102945964, 'val_mae': 6.775450229644775, 'loss': 91.00962787073094, 'mae': 7.485757}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 84.72049407017084, 'val_mae': 6.775249004364014, 'loss': 91.00282209650281, 'mae': 7.485323}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 84.71820522826395, 'val_mae': 6.775028705596924, 'loss': 90.99616709139325, 'mae': 7.484898}
+
+Completed training model
+Results mean::[89.3715841255936, 7.52911901473999]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 1371.5007535204475, 'val_mae': 34.54536056518555, 'loss': 3074.0864885170763, 'mae': 51.75037}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 159.90035878876108, 'val_mae': 11.047924995422363, 'loss': 617.3389602047002, 'mae': 21.455847}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 86.93425001921477, 'val_mae': 6.922059535980225, 'loss': 115.18350429948269, 'mae': 8.5838785}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 86.35386591781804, 'val_mae': 6.80504035949707, 'loss': 91.78556409192159, 'mae': 6.9631705}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 90.73723265565472, 'val_mae': 6.71990442276001, 'loss': 90.67296270836987, 'mae': 6.8970127}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 90.73683522071367, 'val_mae': 6.7198944091796875, 'loss': 91.4101192515701, 'mae': 6.5574026}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 90.73640915199563, 'val_mae': 6.719888687133789, 'loss': 91.40974490044655, 'mae': 6.5574017}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 90.73584905082797, 'val_mae': 6.719875812530518, 'loss': 91.40935183900059, 'mae': 6.557399}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 90.73454470693329, 'val_mae': 6.719847679138184, 'loss': 91.40870881449696, 'mae': 6.557401}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 90.73354768164364, 'val_mae': 6.719825267791748, 'loss': 91.40753007304188, 'mae': 6.5573964}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 90.73180026772582, 'val_mae': 6.719788551330566, 'loss': 91.40655270744773, 'mae': 6.557387}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 90.73020953896605, 'val_mae': 6.719756126403809, 'loss': 91.40492463480946, 'mae': 6.5573707}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 90.72800080570174, 'val_mae': 6.719712257385254, 'loss': 91.40341785300996, 'mae': 6.557391}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 90.72532778610417, 'val_mae': 6.7196574211120605, 'loss': 91.40139083744202, 'mae': 6.5573664}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 90.7215379314658, 'val_mae': 6.719583511352539, 'loss': 91.3989805806163, 'mae': 6.5573535}
+
+Completed training model
+Results mean::[85.91183262245328, 6.9014573097229]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [5]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 826.2457968629436, 'val_mae': 24.38876724243164, 'loss': 1187.8226494095275, 'mae': 29.538948}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 290.46240159022955, 'val_mae': 14.580424308776855, 'loss': 548.1681872860935, 'mae': 19.543373}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 99.03270848592122, 'val_mae': 8.143011093139648, 'loss': 170.43202219363707, 'mae': 10.664016}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 97.39133297955549, 'val_mae': 8.107175827026367, 'loss': 91.24473454856282, 'mae': 7.541638}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 71.56695283489462, 'val_mae': 6.148499488830566, 'loss': 82.05356427833392, 'mae': 6.8342714}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 0.0001
+{'val_loss': 71.56611605043764, 'val_mae': 6.148341655731201, 'loss': 73.77483617115315, 'mae': 6.8840394}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 0.0001
+{'val_loss': 71.56525847352582, 'val_mae': 6.148172378540039, 'loss': 73.77194565811394, 'mae': 6.883833}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 0.0001
+{'val_loss': 71.56450193899649, 'val_mae': 6.148019790649414, 'loss': 73.76886918744067, 'mae': 6.883611}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 0.0001
+{'val_loss': 71.5636717007484, 'val_mae': 6.147881031036377, 'loss': 73.76595823683606, 'mae': 6.883399}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 0.0001
+{'val_loss': 71.5628567919319, 'val_mae': 6.147715091705322, 'loss': 73.7635364576759, 'mae': 6.8832183}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 71.56185571646985, 'val_mae': 6.147501468658447, 'loss': 73.760505758941, 'mae': 6.8830023}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 71.56090872964741, 'val_mae': 6.1473002433776855, 'loss': 73.75666288399475, 'mae': 6.8827133}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 71.55985952306676, 'val_mae': 6.147083282470703, 'loss': 73.75291406259448, 'mae': 6.8824596}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 71.55885279620135, 'val_mae': 6.146876335144043, 'loss': 73.74907913444213, 'mae': 6.8821626}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 71.55772150298695, 'val_mae': 6.1466450691223145, 'loss': 73.7454078928236, 'mae': 6.8818965}
+
+Completed training model
+Results mean::[76.71652386235256, 6.877861499786377]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [10]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 365.08417049455056, 'val_mae': 15.988146781921387, 'loss': 1546.8537643952266, 'mae': 35.269913}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 175.0484204704379, 'val_mae': 9.864081382751465, 'loss': 269.4064939044208, 'mae': 11.557105}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 116.24346904990114, 'val_mae': 8.152809143066406, 'loss': 166.93411317181662, 'mae': 9.373763}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 109.81886847225236, 'val_mae': 8.614225387573242, 'loss': 102.43338995304639, 'mae': 7.463254}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 98.99464115095728, 'val_mae': 6.959502220153809, 'loss': 85.12872415282779, 'mae': 6.8668275}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 6.0
+{'val_loss': 168.15758128225067, 'val_mae': 11.894999504089355, 'loss': 71.08858133321945, 'mae': 6.152932}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 5.755282581475768
+{'val_loss': 87.98760962780611, 'val_mae': 7.658356666564941, 'loss': 74.933916889108, 'mae': 6.4768143}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 5.045084971874737
+{'val_loss': 268.3374432222343, 'val_mae': 13.704172134399414, 'loss': 73.16345262084583, 'mae': 6.4922943}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 3.9389262614623664
+{'val_loss': 99.09931886931996, 'val_mae': 6.498086929321289, 'loss': 79.25447986000462, 'mae': 6.3406124}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 2.5450849718747373
+{'val_loss': 73.94679231996889, 'val_mae': 6.686689376831055, 'loss': 62.162622363205664, 'mae': 5.6050076}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 73.94077593014563, 'val_mae': 6.685940265655518, 'loss': 65.06575448003716, 'mae': 6.5856485}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 73.9344022774402, 'val_mae': 6.685147285461426, 'loss': 65.05750362053745, 'mae': 6.584891}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 73.92752409570011, 'val_mae': 6.684291362762451, 'loss': 65.04862800102116, 'mae': 6.584048}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 73.92020025371033, 'val_mae': 6.683370113372803, 'loss': 65.03905883883544, 'mae': 6.5831656}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 73.91229681321133, 'val_mae': 6.682380676269531, 'loss': 65.02885993863038, 'mae': 6.5822525}
+
+Completed training model
+Results mean::[68.22712468165977, 6.679868221282959]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [10]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 802.2728361906828, 'val_mae': 25.254125595092773, 'loss': 1163.1553459994195, 'mae': 29.096277}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 193.30797058858988, 'val_mae': 11.394464492797852, 'loss': 387.3679360782399, 'mae': 16.298786}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 193.1763698436596, 'val_mae': 10.652047157287598, 'loss': 141.30625979302468, 'mae': 9.4041815}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 100.79196072802131, 'val_mae': 8.073071479797363, 'loss': 95.2989974125251, 'mae': 7.428893}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 201.3392551563404, 'val_mae': 11.394524574279785, 'loss': 91.45270543054161, 'mae': 7.2087283}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 6.0
+{'val_loss': 103.54029052640185, 'val_mae': 6.841915130615234, 'loss': 107.49429781296674, 'mae': 8.085306}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 5.755282581475768
+{'val_loss': 120.55658392258633, 'val_mae': 9.15587329864502, 'loss': 76.3924999886622, 'mae': 6.5249486}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 5.045084971874737
+{'val_loss': 89.92072875411422, 'val_mae': 6.13670539855957, 'loss': 85.50135131812317, 'mae': 7.047098}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 3.9389262614623664
+{'val_loss': 72.23967069461023, 'val_mae': 5.792055606842041, 'loss': 74.70800639232246, 'mae': 6.2874994}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 2.5450849718747373
+{'val_loss': 80.11206737565405, 'val_mae': 5.778782367706299, 'loss': 62.53497903099739, 'mae': 5.791501}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 80.10708116602015, 'val_mae': 5.778682708740234, 'loss': 59.04182826180945, 'mae': 5.4004974}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 80.1056285434299, 'val_mae': 5.7786431312561035, 'loss': 59.0401906110923, 'mae': 5.400583}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 80.10273161052186, 'val_mae': 5.778578758239746, 'loss': 59.03965110601656, 'mae': 5.4005666}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 80.10021659474315, 'val_mae': 5.7785234451293945, 'loss': 59.03868746683693, 'mae': 5.400636}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 80.09802474504636, 'val_mae': 5.778467655181885, 'loss': 59.03767889867257, 'mae': 5.4006257}
+
+Completed training model
+Results mean::[74.92249612247242, 6.647087097167969]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [10]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 332.83921343014566, 'val_mae': 13.93954086303711, 'loss': 1135.3252919672443, 'mae': 28.873522}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 107.34747662956332, 'val_mae': 7.820582866668701, 'loss': 166.90531463150637, 'mae': 9.010435}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 103.79335031391662, 'val_mae': 7.025003433227539, 'loss': 106.80041275083465, 'mae': 7.971932}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 125.24198857060185, 'val_mae': 9.870034217834473, 'loss': 97.00400966018346, 'mae': 7.2483826}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 90.25123228850188, 'val_mae': 6.963585376739502, 'loss': 90.04259866974301, 'mae': 7.066967}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 6.0
+{'val_loss': 90.67745053326642, 'val_mae': 6.412449359893799, 'loss': 82.40231183586475, 'mae': 6.570262}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 5.755282581475768
+{'val_loss': 97.40841771349494, 'val_mae': 6.308137893676758, 'loss': 81.41162000721084, 'mae': 6.539339}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 5.045084971874737
+{'val_loss': 115.9247932434082, 'val_mae': 6.857827186584473, 'loss': 80.3705310408176, 'mae': 6.5248904}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 3.9389262614623664
+{'val_loss': 85.53340377336667, 'val_mae': 5.994477272033691, 'loss': 81.80718490730499, 'mae': 6.3510222}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 2.5450849718747373
+{'val_loss': 118.13590970451449, 'val_mae': 6.994433879852295, 'loss': 72.25317229279793, 'mae': 6.146922}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 118.11164559258356, 'val_mae': 6.993396759033203, 'loss': 97.7151938045726, 'mae': 6.64199}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 118.08579013965748, 'val_mae': 6.992290019989014, 'loss': 97.69346057076942, 'mae': 6.6409273}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 118.05671917950666, 'val_mae': 6.991047382354736, 'loss': 97.670066998839, 'mae': 6.639815}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 118.02105208973826, 'val_mae': 6.989518642425537, 'loss': 97.64416862936581, 'mae': 6.6385584}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 117.99755162368587, 'val_mae': 6.988513946533203, 'loss': 97.61455686764083, 'mae': 6.63711}
+
+Completed training model
+Results mean::[106.3872776405484, 7.410355567932129]
+Reached main LR function
+Batch size: 12
+Total num_of_epochs: 15
+Epoch distribution : [10]
+LR Policy distribution: [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1': 6.0, 'l': 5}, {'lrPolicy': 'FIX', 'k0': 0.0001}]
+Loading imports
+Loading imports completed
+Reading dataset
+Reading dataset completed
+Starting training model
+
+Epoch : 1/15
+Learning rate for epoch: 1 is 1.0
+{'val_loss': 11981.184582368827, 'val_mae': 98.77652740478516, 'loss': 18415.40010642415, 'mae': 123.8608}
+
+Epoch : 2/15
+Learning rate for epoch: 2 is 2.5450849718747373
+{'val_loss': 3641.112979841821, 'val_mae': 49.037139892578125, 'loss': 8026.771398963574, 'mae': 76.60444}
+
+Epoch : 3/15
+Learning rate for epoch: 3 is 3.938926261462366
+{'val_loss': 888.9790656949267, 'val_mae': 22.26801872253418, 'loss': 2354.1870616050696, 'mae': 36.52722}
+
+Epoch : 4/15
+Learning rate for epoch: 4 is 5.045084971874737
+{'val_loss': 288.18923686463154, 'val_mae': 13.86398696899414, 'loss': 679.0661973510364, 'mae': 19.634941}
+
+Epoch : 5/15
+Learning rate for epoch: 5 is 5.755282581475767
+{'val_loss': 201.67745274673274, 'val_mae': 11.635194778442383, 'loss': 240.62515363899917, 'mae': 12.040817}
+
+Epoch : 6/15
+Learning rate for epoch: 6 is 6.0
+{'val_loss': 166.6534310800058, 'val_mae': 10.032400131225586, 'loss': 140.2491641325109, 'mae': 8.959843}
+
+Epoch : 7/15
+Learning rate for epoch: 7 is 5.755282581475768
+{'val_loss': 263.00706237039446, 'val_mae': 14.584691047668457, 'loss': 104.0983357149012, 'mae': 7.7468767}
+
+Epoch : 8/15
+Learning rate for epoch: 8 is 5.045084971874737
+{'val_loss': 87.91814658082562, 'val_mae': 7.2301177978515625, 'loss': 115.35591850044557, 'mae': 8.205437}
+
+Epoch : 9/15
+Learning rate for epoch: 9 is 3.9389262614623664
+{'val_loss': 107.3259447356801, 'val_mae': 7.6593122482299805, 'loss': 85.93388299085777, 'mae': 7.1240735}
+
+Epoch : 10/15
+Learning rate for epoch: 10 is 2.5450849718747373
+{'val_loss': 87.60176533828547, 'val_mae': 6.714074611663818, 'loss': 81.09748814349572, 'mae': 6.8667316}
+
+Epoch : 11/15
+Learning rate for epoch: 11 is 0.0001
+{'val_loss': 87.59960019146955, 'val_mae': 6.714016914367676, 'loss': 77.19435266075489, 'mae': 6.5548725}
+
+Epoch : 12/15
+Learning rate for epoch: 12 is 0.0001
+{'val_loss': 87.59915942910277, 'val_mae': 6.7140045166015625, 'loss': 77.1939740815768, 'mae': 6.554916}
+
+Epoch : 13/15
+Learning rate for epoch: 13 is 0.0001
+{'val_loss': 87.59766821213711, 'val_mae': 6.713964462280273, 'loss': 77.19364207595494, 'mae': 6.5549054}
+
+Epoch : 14/15
+Learning rate for epoch: 14 is 0.0001
+{'val_loss': 87.59714727048521, 'val_mae': 6.713952541351318, 'loss': 77.19328046509357, 'mae': 6.5549345}
+
+Epoch : 15/15
+Learning rate for epoch: 15 is 0.0001
+{'val_loss': 87.59616491529677, 'val_mae': 6.71392297744751, 'loss': 77.19304207013488, 'mae': 6.5549254}
+
+Completed training model
+Results mean::[92.9441567215265, 7.676234722137451]
