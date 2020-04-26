@@ -11,7 +11,10 @@ every 3s.
 
 {% block body %}
 <div class="container">
-<h4>Results/logs</h4>
+<div class="container row"><h4>Results/logs</h4>&nbsp;&nbsp;<a href="{% url 'blog-visualize' %}"><button class="btn btn-outline-primary" >Visualize</button></a></div>
+<h6><small>Page will refresh every 3s. Kindly wait during the trainig process.</small></h6>
+<br>
+
 <div id= "results_div"></div>  
 </div>
 <br>

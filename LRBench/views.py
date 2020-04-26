@@ -4,6 +4,9 @@ from django.forms import formset_factory
 from django.http import HttpResponse
 import importlib
 from django.conf import settings
+import json
+from django.http import JsonResponse
+
 
 
 #main mr form process function
@@ -39,12 +42,14 @@ def lr_form_process(request):
             result_file.write("Epoch distribution selected: "+ str(epochs_list)+"\n")
             result_file.write("LR Policy distribution : "+ str(lr_policies)+"\n\n\n")
             result_file.write("Calling main LR function\n")
-            result_file.close() #needed to refelct the change
+            result_file.close() #needed to reflect the change
+
             my_module = importlib.import_module("examples.%s.%s.%s" %(dataset,framework,framework))
             my_module.lr_main(batch,epochs_list,total_epochs,lr_policies)
           
             result_file=open(filename, "a+")
-            result_file.write("Done!")
+            #this string is matched to stop the xml http request while displaying results/logs
+            result_file.write("Done!") 
             result_file.close()
             return render(request, 'results.html')
     return render(request, template_name, {'formset': formset, 'form' : form})
@@ -71,3 +76,16 @@ def home(request):
 
 def results(request):
     return render(request, 'results.html', {'title': 'Results'})
+
+def visualize(request):
+    return render(request, 'visualize.html', {'title': 'Visualize'})
+
+#parsing data for the visualization table
+def pivot_data(request):
+    filename=(settings.STATIC_ROOT)[0]+"\\only_logs.txt"
+    content=[]
+    with open(filename) as f:
+        for line in f:
+            json_acceptable_string = line.replace("'", "\"").rstrip('\n')
+            content.append(json.loads(json_acceptable_string))
+    return JsonResponse(content, safe=False)

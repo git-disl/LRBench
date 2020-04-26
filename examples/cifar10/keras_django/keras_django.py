@@ -44,6 +44,8 @@ def lr_main(batch_size,epochs_list,total_epochs,lrPolicy):
 	try:
 		print("in main keras function")
 		filename=(settings.STATIC_ROOT)[0]+"\\results.txt"
+		only_logs=(settings.STATIC_ROOT)[0]+"\\only_logs.txt"
+		only_logs_file=open(only_logs, "w+")
 		# filename="test.txt"
 
 		result_file=open(filename, "a+")
@@ -78,7 +80,7 @@ def lr_main(batch_size,epochs_list,total_epochs,lrPolicy):
 		model=wider_model(x_train,lrbenchLR)
 
 
-		lcb = LambdaCallback(on_epoch_end= lambda epoch,logs:write_to_txt_file(epoch,logs,lrbenchLR,total_epochs,result_file))
+		lcb = LambdaCallback(on_epoch_end= lambda epoch,logs:write_to_txt_file(epoch,logs,lrbenchLR,total_epochs,result_file,only_logs_file))
 
 		history=model.fit(x_train,y_train,validation_split=0.2,epochs=total_epochs,callbacks=[lcb,lrCallback])
 
@@ -89,6 +91,7 @@ def lr_main(batch_size,epochs_list,total_epochs,lrPolicy):
 		result_file.write("Completed training model\n")
 		result_file.write("Results mean::"+ str(output)+"\n")
 		result_file.close()
+		only_logs_file.close()
 	except Exception as ex:
 		filename=(settings.STATIC_ROOT)[0]+"\\results.txt"
 		result_file=open(filename, "a+")
@@ -128,11 +131,17 @@ def compute_results(model_fit,score, result_file, x_test, y_test,model, lrbenchL
 	result_file.write("Result added to database\n\n")
 	result_file.flush()
 
-def write_to_txt_file(epochs,logs,lrbenchLR,total_epochs,result_file):
+def write_to_txt_file(epochs,logs,lrbenchLR,total_epochs,result_file,only_logs_file):
 	result_file.write("Epoch : " +str(epochs+1)+"/"+str(total_epochs)+"\n")
 	result_file.write("Learning rate for epoch: "+str(epochs+1)+ " is "+ str(lrbenchLR.getLR(epochs))+"\n")
 	result_file.write(str(logs)+"\n\n")
 	result_file.flush()
+	logs['epoch']=epochs+1
+	logs['learning_rate']=lrbenchLR.getLR(epochs)
+	only_logs_file.write(str(logs)+"\n")
+	
+	
+	
 	
 	
 
