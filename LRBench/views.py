@@ -56,8 +56,8 @@ def lr_form_process(request):
             result_file.close() #needed to reflect the change
 
             #calling the main NN implementation
-            # my_module = importlib.import_module("examples.%s.%s.%s" %(dataset,framework,framework))
-            # my_module.lr_main(batch,epochs_list,total_epochs,lr_policies)
+            my_module = importlib.import_module("examples.%s.%s.%s" %(dataset,framework,framework))
+            my_module.lr_main(batch,epochs_list,total_epochs,lr_policies)
           
             result_file=open(filename, "a+")
             #this string is matched to stop the xml http request while displaying results/logs
