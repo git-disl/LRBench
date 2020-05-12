@@ -6,70 +6,199 @@
 
 {% block body %}
 <br>
-<div class="container col-6">
+<div class="container col-6" id="temp">
   <form class ="form-horizontal"action="" method="post" id="post-form">
     {% csrf_token %}
-    <!-- Main form -->
+
+    <!-- Message after saving LR schdule to DB -->
+    {% if isSaved %}
+    <h4>{{ isSaved }}</h4>
+    {%else%}
+
+    <!-- Main form - needed only when running a CNN model-->
+    {% if isCreateSchedule is False %}
     {{ form | crispy }} 
+    {% endif %}
+
+    {% if isCreateSchedule is True %}
+    <br>
+    <div class="row">  
+      <h5> Create the Learning rate Scheduler </h5>
+    </div>
+    <br>
+    {% endif %}
+
+    <!-- Dynamic formsets - needed for LR schedule adding and running model -->
     {{ formset.management_form }}
-    <!-- dynamic formsets -->
+    
     {% for form1 in formset %}
+    
+    {% if isCreateSchedule is True %}
+    <div class="row input" required>  
+      {{ form1.lrSchedulerName | as_crispy_field }}   
+    </div>
+    {% endif %}
 
-    <div id= 'main_div' name='{{ forloop.counter0 }}' class= 'form-row input-group'>
-
-      <div class="row">  
-       <div class="col">  
-        {{ form1.lrPolicy | as_crispy_field }}   
+    <div id="all_formsets">
+      <div id= 'main_div_0' class= 'form-row input-group'>
+        <div class="row">  
+         <div class="col">  
+          {{ form1.lrPolicy | as_crispy_field }}   
+        </div>
+        <div class="col">  
+          {{ form1.epochs | as_crispy_field }}   
+        </div>
       </div>
-      <div class="col">  
-        {{ form1.epochs | as_crispy_field }}   
+      <div class="row input-group">  
+        <div class="col">  
+          {{ form1.k0 | as_crispy_field }}
+        </div>
+        <div class="col" id="displayDivId" style="display:none">    
+          {{ form1.k1 | as_crispy_field }}
+          <br>
+        </div>
+        <div class="col" id="displayDivId" style="display:none">  
+          {{ form1.p | as_crispy_field }}
+        </div>
+        <div class="col" id="displayDivId" style="display:none">    
+          {{ form1.l | as_crispy_field }}   
+        </div>
+        <div class="col" id="displayDivId" style="display:none">    
+          {{ form1.gamma | as_crispy_field }}
+        </div>
+        <div class="col" style="margin-top:30px">
+          <button id="id_add_btn" name="add_btn" class="btn btn-success add-form-row">+</button>
+        </div>
       </div>
     </div>
-    <div class="row input-group">  
-      <div class="col">  
-        {{ form1.k0 | as_crispy_field }}
-      </div>
-      <div class="col">  
-        {{ form1.k1 | as_crispy_field }}   
-      </div>
-      <div class="col">  
-        {{ form1.p | as_crispy_field }}
-      </div>
-      <div class="col">  
-        {{ form1.l | as_crispy_field }}   
-      </div>
-      <div class="col">  
-        {{ form1.gamma | as_crispy_field }}
-      </div>
-
-      <div class="col" style="margin-top:30px">
-        <button id="add_btn" name="add_btn" class="btn btn-success add-form-row">+</button>  
-      </div>
-
-    </div>
-
   </div>
-
   <br> 
   {% endfor %}
 
+  {% if isCreateSchedule is True %}
+  <input class="btn btn-outline-primary" type="submit" value="Create LR Schedule">
+  {% else %}
   <input class="btn btn-outline-primary" type="submit" value="Submit" id="submit_button">
+  {% endif %}
+
+  {% endif %}
 </form>    
 <br>
-<a href="{% url 'blog-results' %}"><button class="btn btn-outline-primary" id="show_results_button" style="display:none" >Show Results</button></a>
 
+<a href="{% url 'blog-results' %}"><button class="btn btn-outline-primary" id="show_results_button" style="display:none" >Show Results</button></a>
 </div>
 
 
 <!-- scripts to handle varoius functionalities -->
 <script type='text/javascript'>
 
-// Enable the view results button on ly on form submit
+  var defaultFormset;
+
+  //check if page is loading for lr schedule or normal form
+  window.onload = function() 
+  { 
+    var isCreateSchedule= "{{ isCreateSchedule }}"
+    defaultFormset=document.getElementById("main_div_0")
+    if(isCreateSchedule == 'True')
+    {
+      document.getElementById("id_form-0-lrSchedulerName").required=true
+    }
+  };
+
+  //function to populate the lr schedule from DB
+  function fill_lr_schedule(ele)
+  {
+    //default value selected, show only a default lrPolicy 
+    if(ele.value==0)
+    {
+      deleteAllFormsets();
+      if(document.getElementById("main_div_0")!=null)
+        document.getElementById("main_div_0").remove();
+      createDefaultFormset();
+      //allows to add policies
+      $('.form-row:last').find('.btn.remove-form-row')
+      .removeClass('btn-danger').addClass('btn-success')
+      .removeClass('remove-form-row').addClass('add-form-row')
+      .html('+');
+    }
+    else
+    {
+      $.ajax({
+        type: "GET",
+        url: "apply-lr-schedule/",
+        data: 
+        { 
+          id: ele.value,
+        },
+        dataType: "json",
+        success: function(result) 
+        {
+          //get the list of lr policies with epoch number 
+          jsonResult=JSON.parse(result)
+          //create the default formset if not present
+          if(document.getElementById("main_div_0")==null)
+          {
+            createDefaultFormset();
+          }
+
+          deleteAllFormsets();
+          addNewFormsets(jsonResult);
+          //remove the default formset we used for cloning
+          document.getElementById("main_div_0").remove();
+        },
+        error: function(result) 
+        {
+          alert('Sorry we could populate the LR Policy');
+        }
+          });
+    }
+  }
+
+//create default lrPolicy
+function createDefaultFormset()
+{
+  var formDiv = document.getElementById("all_formsets");
+  var content = defaultFormset
+  formDiv.appendChild(content);
+}
+
+//delete all formsets present except the first one
+// we leave the first one as it is needed for cloning
+function deleteAllFormsets()
+{
+  k=1
+  ele=document.getElementById("main_div_"+k)
+  while(ele!=null)
+  {
+    ele.remove();
+    k++;
+    ele=document.getElementById("main_div_"+k)
+  } 
+  //only default formset will be there, so we set total count to 1
+  $('#id_form' + '-TOTAL_FORMS').val(1)
+
+  //allows to add policies along with selected schedule
+  $('.form-row:last').find('.btn.remove-form-row')
+  .removeClass('btn-danger').addClass('btn-success')
+  .removeClass('remove-form-row').addClass('add-form-row')
+  .html('+');
+}
+
+//depending on the selected policy the lr schedules are populated
+function addNewFormsets(jsonResult)
+{
+  for (i = 0; i < jsonResult.length; i++)
+  {
+    cloneMore('.form-row:last', 'form', true , jsonResult[i]);  
+  }
+}
+
+// Enable the view results button only on form submit
 // Disable the submit button so that another request is not sent
 $('#post-form').on('submit', function(event){
   document.getElementById("submit_button").disabled=true
   document.getElementById("show_results_button").style.display="block"
- }); 
+}); 
 
 // Variables to change the field when user enters LR type
 var k0=["FIX"]
@@ -83,7 +212,8 @@ var k0_k1_p_l=[];
 // Display the appropriate fields on LR policy change
 // Disable the others
 // Validate if the corresponding fields are present on submit
-function lr_policy_change(ele){
+function lr_policy_change(ele)
+{
   name=ele.name
   prefix=name.substr(0, name.indexOf('l'))
   value=ele.value
@@ -95,127 +225,187 @@ function lr_policy_change(ele){
   p_div=document.getElementsByName(prefix+"p")[0]
   l_div=document.getElementsByName(prefix+"l")[0]
 
-  k0_div.required=true
-  k1_div.disabled = true;
-  (gamma_div).disabled = true;
-  (p_div).disabled = true;
-  (l_div).disabled = true;
+  k0_div.required=true;
+  (k1_div).closest('#displayDivId').style.display="none";
+  (gamma_div).closest('#displayDivId').style.display="none";
+  (p_div).closest('#displayDivId').style.display="none";
+  (l_div).closest('#displayDivId').style.display="none";
   (k1_div).required = false;
   (gamma_div).required = false;
   (p_div).required = false;
   (l_div).required = false;
 
-//enabling gamma
-if(k0_gamma_l.includes(value) || k0_gamma.includes(value) ||  
-  k0_gamma_p.includes(value) || k0_k1_gamma_l.includes(value))
-{
+  //enabling gamma
+  if(k0_gamma_l.includes(value) || k0_gamma.includes(value) ||  
+    k0_gamma_p.includes(value) || k0_k1_gamma_l.includes(value))
+  {
 
-  (gamma_div).disabled = false;
-  (gamma_div).required = true;
-  
-}
+    (gamma_div).closest('#displayDivId').style.display="block";
+    (gamma_div).required = true;
+    
+  }
 
-//enabling l
-if(k0_gamma_l.includes(value) || k0_k1_p_l.includes(value) ||  
-  k0_k1_l.includes(value) || k0_k1_gamma_l.includes(value))
-{
-  (l_div).disabled = false;
-  (l_div).required = true;
-}
+  //enabling l
+  if(k0_gamma_l.includes(value) || k0_k1_p_l.includes(value) ||  
+    k0_k1_l.includes(value) || k0_k1_gamma_l.includes(value))
+  {
+    (l_div).closest('#displayDivId').style.display="block";
+    (l_div).required = true;
+  }
 
-//enabling k1
-if( k0_k1_p_l.includes(value) ||  
-  k0_k1_l.includes(value) || k0_k1_gamma_l.includes(value))
-{
-  (k1_div).disabled = false;
-  (k1_div).required = true;
-}
+  //enabling k1
+  if( k0_k1_p_l.includes(value) ||  
+    k0_k1_l.includes(value) || k0_k1_gamma_l.includes(value))
+  {
+    (k1_div).closest('#displayDivId').style.display="block";
+    (k1_div).required = true;
+  }
 
-//enabling p
-if(k0_gamma_p.includes(value) || k0_k1_p_l.includes(value))
-{
-  (p_div).disabled = false;
-  (p_div).required = true;
+  //showing p and enabling it
+  if(k0_gamma_p.includes(value) || k0_k1_p_l.includes(value))
+  {  
+    p_div.closest('#displayDivId').style.display="block";
+    (p_div).required = true;
+  }
 }
-}
-
 
 //Formset addition and deletion function
 //source: https://medium.com/all-about-django/adding-forms-dynamically-to-a-django-formset-375f1090c2b0
-
-function updateElementIndex(el, prefix, ndx) {
-var id_regex = new RegExp('(' + prefix + '-\\d+)');
-var replacement = prefix + '-' + ndx;
-if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
-if (el.id) el.id = el.id.replace(id_regex, replacement);
-if (el.name) el.name = el.name.replace(id_regex, replacement);
+function updateElementIndex(el, prefix, ndx) 
+{
+  var id_regex = new RegExp('(' + prefix + '-\\d+)');
+  var replacement = prefix + '-' + ndx;
+  if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
+  if (el.id) el.id = el.id.replace(id_regex, replacement);
+  if (el.name) el.name = el.name.replace(id_regex, replacement);
 }
-function cloneMore(selector, prefix) {
 
-var newElement = $(selector).clone(true);
 
-var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
-
-newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
-  var name = $(this).attr('name').replace('-' + (total-1) + '-', '-' + total + '-');
-  var id = 'id_' + name;
-  $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
-  if (id.includes('lr')) //set defualt value of dropdown to FIX
-  {
-    $(this).attr({'name': name, 'id': id}).val('FIX')        
-  }
-  if (!id.includes('lr')&& !id.includes('epochs') && !id.includes('k0') &&
-   !$(this).is("button")) //disable all fileds except k0, dropdown and add button
-  {
-    $(this).attr({'disabled':true})
-    console.log($(this))        
-  }
-
-});
-newElement.find('label').each(function() {
-  var forValue = $(this).attr('for');
-  if (forValue) {
-    forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');
-    $(this).attr({'for': forValue});
-  }
-});
-total++;
-$('#id_' + prefix + '-TOTAL_FORMS').val(total);
-$(selector).after(newElement);
-var conditionRow = $('.form-row:not(:last)');
-conditionRow.find('.btn.add-form-row')
-.removeClass('btn-success').addClass('btn-danger')
-.removeClass('add-form-row').addClass('remove-form-row')
-.html('-');
-return false;
-}
-function deleteForm(prefix, btn) {
-var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
-if (total > 1){
-  btn.closest('.form-row').remove();
-  var forms = $('.form-row');
-  $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
-  for (var i=0, formCount=forms.length; i<formCount; i++) {
-    $(forms.get(i)).find(':input').each(function() {
-      updateElementIndex(this, prefix, i);
+function cloneMore(selector, prefix, isLoadPolicy=false, entry=null) 
+{
+  var newElement = $(selector).clone(true);
+  var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+  newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
+    var name = $(this).attr('name').replace('-' + (total-1) + '-', '-' + total + '-');
+    var id = 'id_' + name;
+    $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+    if (id.includes('lr')) 
+    {
+      if(!isLoadPolicy)
+      {
+        //set defualt value of dropdown to FIX
+        $(this).attr({'name': name, 'id': id}).val('FIX')
+      }        
+      else
+      {
+        //show corresponding policy from DB
+        $(this).attr({'name': name, 'id': id}).val(entry.lrPolicy)
+      }
+    }
     });
+  //updating index
+  newElement.find('label').each(function() {
+    var forValue = $(this).attr('for');
+    if (forValue) {
+      forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');
+      $(this).attr({'for': forValue});
+    }   
+    });
+  total++;
+  $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+  $(selector).after(newElement);
+  var conditionRow = $('.form-row:not(:last)');
+  conditionRow.find('.btn.add-form-row')
+  .removeClass('btn-success').addClass('btn-danger')
+  .removeClass('add-form-row').addClass('remove-form-row')
+  .html('-');
+  setDisplay(total, entry);
+  return false;
+}
+
+// hide all elements except k0 and epochs and update main div id 
+// indexing is 0 based
+function setDisplay(total, entry=null)
+{
+  document.getElementById("id_form-"+(total-1)+"-k0").closest("#main_div_"+(total-2)).setAttribute("id", "main_div_"+(total-1))
+  //set k0, number of epochs from the policy incase loaded policy used
+  if(entry!=null)
+  {
+    document.getElementById("id_form-"+(total-1)+"-k0").value=entry.k0
+    document.getElementById("id_form-"+(total-1)+"-epochs").value=entry.epochs
   }
+  //set the remaining parameters if it is present in the schedule, else hide them for
+  //default or not present in the schedule
+  if(entry!=null && entry.hasOwnProperty('k1'))
+  {
+    document.getElementById("id_form-"+(total-1)+"-k1").value=entry.k1
+    document.getElementById("id_form-"+(total-1)+"-k1").closest('#displayDivId').style.display="block";
+  }
+  else
+    document.getElementById("id_form-"+(total-1)+"-k1").closest('#displayDivId').style.display="none";
+
+  if(entry!=null && entry.hasOwnProperty('p'))
+  {
+    document.getElementById("id_form-"+(total-1)+"-p").value=entry.p
+    document.getElementById("id_form-"+(total-1)+"-p").closest('#displayDivId').style.display="block";
+  }
+  else
+    document.getElementById("id_form-"+(total-1)+"-p").closest('#displayDivId').style.display="none";
+
+  if(entry!=null && entry.hasOwnProperty('l'))
+  {
+    document.getElementById("id_form-"+(total-1)+"-l").value=entry.l
+    document.getElementById("id_form-"+(total-1)+"-l").closest('#displayDivId').style.display="block";
+  }
+  else
+    document.getElementById("id_form-"+(total-1)+"-l").closest('#displayDivId').style.display="none";
+
+  if(entry!=null && entry.hasOwnProperty('gamma'))
+  {
+    document.getElementById("id_form-"+(total-1)+"-gamma").value=entry.gamma
+    document.getElementById("id_form-"+(total-1)+"-gamma").closest('#displayDivId').style.display="block";
+  }
+  else
+    document.getElementById("id_form-"+(total-1)+"-gamma").closest('#displayDivId').style.display="none";
 }
-return false;
+
+function deleteForm(prefix, btn) 
+{
+  var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+  if (total > 1)
+  {
+    btn.closest('.form-row').remove();
+    var forms = $('.form-row');
+    $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+    for (var i=0, formCount=forms.length; i<formCount; i++) 
+    {
+      //updating index of the inputs in a formset
+      $(forms.get(i)).find(':input').each(function() {
+        updateElementIndex(this, prefix, i);
+      });
+      //updating index of the labels in a formset
+      $(forms.get(i)).find('label').each(function(){
+        updateElementIndex(this, prefix, i);
+      });
+      //updating index of the main_div formset
+      var mainDivObj=forms.get(i).closest('div.form-row');
+      mainDivObj.setAttribute("id", "main_div_"+i);
+    }
+  }
+  return false;
 }
+
 $(document).on('click', '.add-form-row', function(e){
-e.preventDefault();
-cloneMore('.form-row:last', 'form');
-return false;
+  e.preventDefault();
+  cloneMore('.form-row:last', 'form');
+  return false;
 });
+
 $(document).on('click', '.remove-form-row', function(e){
-e.preventDefault();
-deleteForm('form', $(this));
-return false;
+  e.preventDefault();
+  deleteForm('form', $(this));
+  return false;
 });
-
-
 </script>
-
 {% endblock body %}
 {% endblock content %}

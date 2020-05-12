@@ -1,18 +1,14 @@
-'''
-framework: a string. Example: keras
-parameters: a list of dictionaries. Example : [{'lrPolicy': 'SIN', 'k0': 1.0, 'k1':6.0, 'l': 5},
-			{'lrPolicy': 'FIX', 'k0': 0.0001}]
-dataset: a string. Example:mnist
-
-testing_accuracy: Float representing the testing accuracy
-
-robustness:training accuracy-testing accuracy
-
-
-'''
 from LRBench.models import Project
+from LRBench.models import LRSchedule
+
 class db_class:
-	
+	'''
+	Method to save each successful run to DB.
+	Table name: LRBench_project
+	DB fields:
+		primary key: auto generated integer 
+		Fields obtained from Project model
+	'''
 	def add_result(self,project_dict):
 		project = Project()
 		project.model_framework = project_dict['model_framework']
@@ -26,3 +22,22 @@ class db_class:
 		project.std_dev_confidence=project_dict['confidence_standard_deviation']
 		project.cdac=project_dict['cdac']
 		project.save()
+
+	'''
+	Method to store lr schedules to DB
+	Table name: LRBench_lrschedule
+	DB fields:
+		primary key: auto generated integer
+		Fields obtained from LRSchedule model
+	returns message to be displayed to user
+	'''
+	def add_lr_schedule(self,lr_schedule_name,lr_policies,epochs_list):
+		try:
+			lr_schedule = LRSchedule()
+			lr_schedule.lr_schedule_name=lr_schedule_name
+			lr_schedule.lr_policy=lr_policies
+			lr_schedule.epochs_list=epochs_list
+			lr_schedule.save()
+			return "LR Schedule Created!" 
+		except Exception as ex:
+			return str(type(ex).__name__)+"      "+ str(ex.args)

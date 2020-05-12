@@ -1,11 +1,8 @@
 {% extends "common.html" %} 
 {% block content %}
-
 {% block body %}
 
-
 <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
-
 <link rel="stylesheet" href="https://cdn.flexmonster.com/demo.css">
 
 <div class="container">
@@ -13,26 +10,25 @@
 	<a href="{% url 'blog-results' %}"><button class="btn btn-outline-primary" >Go to logs</button></a>
 	<br>
 </div>
+
 <div id="pivot-table-container" data-url="{% url 'pivot_data' %}"></div>
-<!-- <div id="pivot-chart-container"></div> -->
 
 <script type="text/javascript">
-	function processData(dataset) {
+	function processData(dataset) 
+	{
 		var result = []
-    if(dataset.length==0)//no result has been generated
-    {
-    	alert("Please wait for the training to begin.")
-    	return result;
-    }
-    else
-    {
-    	result.push(Object.keys(dataset[0]))
-    	dataset.forEach(item => result.push(Object.values(item)));
-    	return result;
-    }	
-
-
-}
+	    if(dataset.length==0)//no result has been generated
+	    {
+	    	alert("Please wait for the training to begin.")
+	    	return result;
+	    }
+	    else
+	    {
+	    	result.push(Object.keys(dataset[0]))
+	    	dataset.forEach(item => result.push(Object.values(item)));
+	    	return result;
+	    }	
+	}
 
 $.ajax({
 	url: $("#pivot-table-container").attr("data-url"),
@@ -50,22 +46,27 @@ $.ajax({
 					type: "json",
 					data: processData(data),
 					mapping: {
+						"accuracy": {
+							"caption": "Accuracy",
+							"type": "number"
+						},
+
+							"epoch": {
+							"caption": "Epoch Number",
+							"type": "number"
+						},
+						"learning_rate": {
+							"caption": "Learning Rate",
+							"type": "number"
+						},
 
 						"loss": {
 							"caption": "Loss",
 							"type": "number"
 						},
-						"accuracy": {
-							"caption": "Accuracy",
-							"type": "number"
-						},
+				
 						"top_k_categorical_accuracy":{
 							"caption": "Top 5 Accuracy",
-							"type": "number"
-
-						},
-						"val_loss":{
-							"caption": "Validation Loss",
 							"type": "number"
 
 						},
@@ -73,17 +74,12 @@ $.ajax({
 							"caption": "Validation Accuracy",
 							"type": "number"
 						},
+						"val_loss":{
+							"caption": "Validation Loss",
+							"type": "number"
+						},						
 						"val_top_k_categorical_accuracy":{
 							"caption": "Validation Top 5 Accuracy",
-							"type": "number"
-
-						},
-						"epoch": {
-							"caption": "Epoch Number",
-							"type": "number"
-						},
-						"learning_rate": {
-							"caption": "Learning Rate",
 							"type": "number"
 						}
 					}
@@ -150,18 +146,18 @@ $.ajax({
 	}
 });
 
-// Removed open and connect to DB option
-function customizeToolbar(toolbar) {
-    // get all tabs
-    var tabs = toolbar.getTabs();
-    toolbar.getTabs = function () {
-    	delete tabs[0];
-    	delete tabs[1];
-    	return tabs;
-    }
-
-}
+	// Removed open and connect to DB option
+	function customizeToolbar(toolbar) 
+	{
+	    // get all tabs
+	    var tabs = toolbar.getTabs();
+	    toolbar.getTabs = function () 
+	    {
+	    	delete tabs[0];
+	    	delete tabs[1];
+	    	return tabs;
+	    }
+	}
 </script>
-
 {% endblock body %}
 {% endblock content %}
