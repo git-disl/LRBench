@@ -9,6 +9,7 @@ from collections import OrderedDict
 from django.core import serializers
 from LRBench.models import LRSchedule
 from LRBench.database.db_utility import db_class
+from django.db import connection
 
 '''
 Main Form Processing method.
@@ -19,7 +20,7 @@ def lr_form_process(request):
     form = LRForm()
     formset = LRFormset(request.GET or None) 
     template_name='base.html'
-    # lr_schedule_entries = load_saved_lr_schedules()
+    lrSchedules=get_lr_schedules_from_db()
    
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -64,7 +65,7 @@ def lr_form_process(request):
             result_file.write("Done!") 
             result_file.close()
             return render(request, 'results.html')
-    return render(request, template_name, {'formset': formset, 'form' : form, 'isCreateSchedule':False})
+    return render(request, template_name, {'formset': formset, 'form' : form, 'isCreateSchedule':False, 'lrSchedules':lrSchedules })
 
 '''Obtaining list of epochs, lr_policies and total number of epochs'''
 def call_specific_model(cleaned_form_set):
@@ -133,6 +134,13 @@ def create_formset(epochs_list,lr_schedule):
     for i in range(len(epochs_list)):
         lr_schedule[i]['epochs']=epochs_list[i]
     return lr_schedule
+
+''' Load LR Schedules from DB '''
+def get_lr_schedules_from_db():
+    #getting saved schedules from DB
+    if 'LRBench_lrschedule' in connection.introspection.table_names():
+        lr_schedule_entries=LRSchedule.objects.all()
+    return lr_schedule_entries
 
 def about(request):
     return render(request, 'about.html')

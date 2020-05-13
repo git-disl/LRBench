@@ -1,13 +1,11 @@
 from django import forms
 from django.forms import formset_factory
-from LRBench.models import LRSchedule
 
 class LRForm(forms.Form):
     '''
     Main Form fields. 
     All fields are required. Saved schedules are retrieved from DB.
     '''
-    DEFAULT_SCHEDULE= "Not using schedule"
     FRAMEWORK = (
         ('keras','Keras'), 
         ('caffe','Caffe'), 
@@ -18,17 +16,9 @@ class LRForm(forms.Form):
         ('mnist','MNIST'),
     )
 
-    #getting saved schedules from DB
-    lr_schedule_entries=LRSchedule.objects.all()
-    lr_schedule_dropdown=[ (x.id, x.lr_schedule_name ) for x in lr_schedule_entries ]
-    lr_schedule_dropdown.insert(0, (0,DEFAULT_SCHEDULE))
-    SAVED_SCHEDULES=(lr_schedule_dropdown)
-    
     framework=forms.ChoiceField(label='Frame Work',choices=FRAMEWORK)
     dataset=forms.ChoiceField(label='Data Set',choices=DATASET)
     batch_size=forms.IntegerField(label='Batch size', min_value=1)
-    saved_lr_schedules=forms.ChoiceField(label="Load LR Schedule",choices=SAVED_SCHEDULES,
-        widget=forms.Select(attrs={"onChange": 'fill_lr_schedule(this)'}))
 
 class LRPolicy(forms.Form):
     '''

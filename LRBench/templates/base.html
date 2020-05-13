@@ -17,15 +17,21 @@
 
     <!-- Main form - needed only when running a CNN model-->
     {% if isCreateSchedule is False %}
-    {{ form | crispy }} 
+    {{ form | crispy }}
+    <div class="form-group">
+      <label for="savedLRSchedules">Load a LR Schedule</label>
+      <select class="form-control" id="savedLRSchedules" onChange="fill_lr_schedule(this)">
+        <option value=0>Not using schedule</option>
+        {% for lrSchedule in lrSchedules %}
+        <option value="{{ lrSchedule.pk }}">{{ lrSchedule.lr_schedule_name }}</option>
+        {% endfor %} 
+      </select>
+    </div>
     {% endif %}
 
     {% if isCreateSchedule is True %}
-    <br>
-    <div class="row">  
+      <br>
       <h5> Create the Learning rate Scheduler </h5>
-    </div>
-    <br>
     {% endif %}
 
     <!-- Dynamic formsets - needed for LR schedule adding and running model -->
@@ -34,9 +40,7 @@
     {% for form1 in formset %}
     
     {% if isCreateSchedule is True %}
-    <div class="row input" required>  
       {{ form1.lrSchedulerName | as_crispy_field }}   
-    </div>
     {% endif %}
 
     <div id="all_formsets">
