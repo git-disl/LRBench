@@ -45,5 +45,4 @@ class LRPolicy(forms.Form):
     p=forms.FloatField(label='p',required=False)
     gamma=forms.FloatField(label='gamma',required=False)
     l=forms.FloatField(label='l',required=False)
-    lrSchedulerName=forms.CharField(label="LR Schedule Name", required=False)
 LRFormset = formset_factory(LRPolicy, extra=1)

@@ -11,7 +11,7 @@
 	<br>
 </div>
 
-<div id="pivot-table-container" data-url="{% url 'pivot_data' %}"></div>
+<div id="pivot-table-container"></div>
 
 <script type="text/javascript">
 	function processData(dataset) 
@@ -31,7 +31,7 @@
 	}
 
 $.ajax({
-	url: $("#pivot-table-container").attr("data-url"),
+	url:"data/"
 	dataType: 'json',
 	success: function(data) {
 		new Flexmonster({

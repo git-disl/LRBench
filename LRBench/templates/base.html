@@ -7,16 +7,13 @@
 {% block body %}
 <br>
 <div class="container col-6" id="temp">
+  {% if formError %}
+    <h4>{{ formError }}</h4>
+  {% else %}
   <form class ="form-horizontal"action="" method="post" id="post-form">
     {% csrf_token %}
 
-    <!-- Message after saving LR schdule to DB -->
-    {% if isSaved %}
-    <h4>{{ isSaved }}</h4>
-    {%else%}
-
-    <!-- Main form - needed only when running a CNN model-->
-    {% if isCreateSchedule is False %}
+    <!-- Main form -->
     {{ form | crispy }}
     <div class="form-group">
       <label for="savedLRSchedules">Load a LR Schedule</label>
@@ -27,21 +24,20 @@
         {% endfor %} 
       </select>
     </div>
-    {% endif %}
-
-    {% if isCreateSchedule is True %}
-      <br>
-      <h5> Create the Learning rate Scheduler </h5>
-    {% endif %}
-
-    <!-- Dynamic formsets - needed for LR schedule adding and running model -->
+    
+    <div class="row">  
+         <div class="col">  
+          <label for="lrSchedulerName">LR Schedule Name 
+            <span style="font-size:small;">
+              (Required if LR Schedule needs to be saved.)
+            </span>
+          </label>
+          <input class="form-control" type="text" name="lrScheduleName" id="lrScheduleName">
+        </div>
+    </div>
+    <!-- Dynamic formsets  -->
     {{ formset.management_form }}
-    
     {% for form1 in formset %}
-    
-    {% if isCreateSchedule is True %}
-      {{ form1.lrSchedulerName | as_crispy_field }}   
-    {% endif %}
 
     <div id="all_formsets">
       <div id= 'main_div_0' class= 'form-row input-group'>
@@ -79,17 +75,12 @@
   <br> 
   {% endfor %}
 
-  {% if isCreateSchedule is True %}
-  <input class="btn btn-outline-primary" type="submit" value="Create LR Schedule">
-  {% else %}
-  <input class="btn btn-outline-primary" type="submit" value="Submit" id="submit_button">
-  {% endif %}
-
-  {% endif %}
+  <input type="submit" name="save-submit" value="Save LR Schedule and Submit" class="btn btn-outline-primary" onclick="return checkForScheduleName();" id="save-submit"/>&nbsp;
+  <input type="submit" name="submit" value="Submit" class="btn btn-outline-primary" id="submit"/> 
 </form>    
-<br>
 
 <a href="{% url 'blog-results' %}"><button class="btn btn-outline-primary" id="show_results_button" style="display:none" >Show Results</button></a>
+{% endif %}
 </div>
 
 
@@ -98,15 +89,10 @@
 
   var defaultFormset;
 
-  //check if page is loading for lr schedule or normal form
+  //on page load get a default formset to use for cloning
   window.onload = function() 
   { 
-    var isCreateSchedule= "{{ isCreateSchedule }}"
     defaultFormset=document.getElementById("main_div_0")
-    if(isCreateSchedule == 'True')
-    {
-      document.getElementById("id_form-0-lrSchedulerName").required=true
-    }
   };
 
   //function to populate the lr schedule from DB
@@ -152,7 +138,7 @@
         },
         error: function(result) 
         {
-          alert('Sorry we could populate the LR Policy');
+          alert('Sorry we could not populate the LR Policy');
         }
           });
     }
@@ -198,11 +184,31 @@ function addNewFormsets(jsonResult)
 }
 
 // Enable the view results button only on form submit
-// Disable the submit button so that another request is not sent
+// Disable the submit buttons so that another request is not sent
 $('#post-form').on('submit', function(event){
-  document.getElementById("submit_button").disabled=true
-  document.getElementById("show_results_button").style.display="block"
+  document.getElementById("save-submit").style.display='none';
+  document.getElementById("submit").style.display='none';
+  document.getElementById("show_results_button").style.display="block";
 }); 
+
+//ensuring schedule name is present and unique when save submit button pressed
+function checkForScheduleName()
+{
+  enteredName=document.getElementById("lrScheduleName").value
+  if(enteredName.trim() === "")
+  {
+    alert("Please enter a LR Schedule name to save the schedule")
+    return false;
+  }
+  {% for lrSchedule in lrSchedules %}
+    if("{{ lrSchedule.lr_schedule_name}}".toLowerCase() === enteredName.toLowerCase().trim() )
+    {
+      alert("LR Schedule name already exists, please provide another name.")
+      return false;
+    }
+  {% endfor %}
+  return true; 
+}
 
 // Variables to change the field when user enters LR type
 var k0=["FIX"]

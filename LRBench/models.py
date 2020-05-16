@@ -14,6 +14,7 @@ class Project(models.Model):
   '''  
   model_framework=models.CharField(max_length=1000)
   model_params=models.TextField(max_length=1000)
+  epochs=models.TextField()
   lr_policy=models.CharField(max_length=100)
   dataset_name=models.CharField(max_length=1000)
   testing_accuracy=models.FloatField(default=0)
@@ -32,7 +33,7 @@ class LRSchedule(models.Model):
   epochs_list:a string corresponding to number of epochs for each policy
           Ex:[10,20]
   '''
-  lr_schedule_name=models.CharField(max_length=1000)
-  lr_policy=models.TextField(max_length=1000)
-  epochs_list=models.TextField(max_length=1000)
+  lr_schedule_name=models.CharField(max_length=1000, unique=True)
+  lr_policy=models.TextField()
+  epochs_list=models.TextField()
   date_added = models.DateTimeField(default=timezone.now)

@@ -21,6 +21,7 @@ class db_class:
 		project.average_confidence=project_dict['average_confidence']
 		project.std_dev_confidence=project_dict['confidence_standard_deviation']
 		project.cdac=project_dict['cdac']
+		project.epochs=project_dict['epochs']
 		project.save()
 
 	'''
@@ -29,7 +30,7 @@ class db_class:
 	DB fields:
 		primary key: auto generated integer
 		Fields obtained from LRSchedule model
-	returns message to be displayed to user
+	returns message to be displayed to user, bool: if the object was created
 	'''
 	def add_lr_schedule(self,lr_schedule_name,lr_policies,epochs_list):
 		try:
@@ -38,6 +39,6 @@ class db_class:
 			lr_schedule.lr_policy=lr_policies
 			lr_schedule.epochs_list=epochs_list
 			lr_schedule.save()
-			return "LR Schedule Created!" 
+			return 'Saved LR Schedule!',True 
 		except Exception as ex:
-			return str(type(ex).__name__)+"      "+ str(ex.args)
+			return str(type(ex).__name__)+"   "+ str(ex.args),False

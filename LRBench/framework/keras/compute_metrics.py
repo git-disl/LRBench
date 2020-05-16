@@ -3,7 +3,7 @@ class compute_mertics:
 	def p(self):
 		print("in compte metrics class")
 
-	def add_parameters(self,model_framework,dataset_name,model_params):
+	def add_parameters(self,model_framework,dataset_name,model_params,epochs):
 		project_dict={}
 		project_dict['model_framework']=model_framework
 		project_dict['dataset_name']=dataset_name
@@ -13,7 +13,7 @@ class compute_mertics:
 		for ele in model_params.LRparams:
 			lr_functions.append(ele['lrPolicy'])
 		project_dict['lr_policy']=str(lr_functions)	
-
+		project_dict['epochs']=str(epochs)
 		return project_dict
 
 	def add_robustness(self,project_dict,model_fit,score):
@@ -70,8 +70,13 @@ class compute_mertics:
 
 		#store the average value of confidences class wise
 		label_confidence_average=[]
-		for i in range(len(labels_confidences)):		  
-		  label_confidence_average.append(np.mean(np.array(labels_confidences[i])))
+		for i in range(len(labels_confidences)):
+			# if the class was ever predicted
+			if i in labels_confidences.keys():
+				label_confidence_average.append(np.mean(np.array(labels_confidences[i])))
+			else:
+				label_confidence_average.append(0)
+
 
 		cdac=np.std(np.array(label_confidence_average))
 		print("CDAC", cdac)
