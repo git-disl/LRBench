@@ -2,7 +2,7 @@ import json
 import importlib
 import ast
 from django.shortcuts import render
-from .forms import LRForm, LRFormset
+from LRBench.forms import LRForm, LRFormset
 from django.conf import settings
 from django.http import JsonResponse
 from collections import OrderedDict
@@ -53,6 +53,7 @@ def lr_form_process(request):
                 epoch_list_full=epochs_list
                 epoch_list_full.append(total_epochs-sum(epochs_list))  
                 msg,is_saved=db_class().add_lr_schedule(lr_schedule_name,lr_policies,epoch_list_full)
+                epochs_list=epochs_list[:-1]
                 if not is_saved:
                     if 'UNIQUE constraint failed' in msg:
                         return render(request, template_name, {'formError':"LR Schedule Name already present. Please use another name next time."})
