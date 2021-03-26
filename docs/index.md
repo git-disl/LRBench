@@ -23,23 +23,26 @@ A learning rate benchmarking and recommending tool, which will help practitioner
 
 If you find this tool useful, please cite the following paper:
 
-    @ARTICLE{lrbench2019,
-      author = {{Wu}, Yanzhao and {Liu}, Ling and {Bae}, Juhyun and {Chow}, Ka-Ho and
-      {Iyengar}, Arun and {Pu}, Calton and {Wei}, Wenqi and {Yu}, Lei and
-      {Zhang}, Qi},
-      title = "{Demystifying Learning Rate Polices for High Accuracy Training of Deep Neural Networks}",
-      journal = {arXiv e-prints},
-      keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
-      year = "2019",
-      month = "Aug",
-      eid = {arXiv:1908.06477},
-      pages = {arXiv:1908.06477},
-      archivePrefix = {arXiv},
-      eprint = {1908.06477},
-      primaryClass = {cs.LG},
-      adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv190806477W},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-    }
+**Bibtex**:
+```bibtex
+@ARTICLE{lrbench2019,
+  author = {{Wu}, Yanzhao and {Liu}, Ling and {Bae}, Juhyun and {Chow}, Ka-Ho and
+  {Iyengar}, Arun and {Pu}, Calton and {Wei}, Wenqi and {Yu}, Lei and
+  {Zhang}, Qi},
+  title = "{Demystifying Learning Rate Polices for High Accuracy Training of Deep Neural Networks}",
+  journal = {arXiv e-prints},
+  keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+  year = "2019",
+  month = "Aug",
+  eid = {arXiv:1908.06477},
+  pages = {arXiv:1908.06477},
+  archivePrefix = {arXiv},
+  eprint = {1908.06477},
+  primaryClass = {cs.LG},
+  adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv190806477W},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
 
 ## Problem
 
