@@ -26,9 +26,7 @@ If you find this tool useful, please cite the following paper:
 **Bibtex**:
 ```bibtex
 @ARTICLE{lrbench2019,
-  author = {{Wu}, Yanzhao and {Liu}, Ling and {Bae}, Juhyun and {Chow}, Ka-Ho and
-  {Iyengar}, Arun and {Pu}, Calton and {Wei}, Wenqi and {Yu}, Lei and
-  {Zhang}, Qi},
+  author = {Wu, Yanzhao and Liu, Ling and Bae, Juhyun and Chow, Ka-Ho and Iyengar, Arun and Pu, Calton and Wei, Wenqi and Yu, Lei and Zhang, Qi},
   title = "{Demystifying Learning Rate Polices for High Accuracy Training of Deep Neural Networks}",
   journal = {arXiv e-prints},
   keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
