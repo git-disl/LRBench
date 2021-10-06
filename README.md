@@ -19,7 +19,7 @@ A learning rate benchmarking and recommending tool, which will help practitioner
 
 ### The impact of learning rates
 
-The following figure shows the impacts of different learning rates. The FIX (black, k=0.025) reached the local optimum, while the NSTEP (red, k=0.05, γ=0.1, l=[150, 180]) converged to the global optimum. For TRIEXP (yellow, k0=0.05, k1=0.3, γ=0.1, l=100), even though it was the fastest, it failed to converge with high flucatuation.
+The following figure shows the impacts of different learning rates. The FIX (black, k=0.025) reached the local optimum, while the NSTEP (red, k=0.05, γ=0.1, l=[150, 180]) converged to the global optimum. For TRIEXP (yellow, k0=0.05, k1=0.3, γ=0.1, l=100), even though it was the fastest, it failed to converge with high fluctuation.
 
 ![Comparison of three learning rate functions: FIX, NSTEP, and TRIEXP](examples/visualization/FIX-NSTEP-TRIEXP-Comparison.gif)
 
