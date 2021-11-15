@@ -25,24 +25,17 @@ The following figure shows the impacts of different learning rates. The FIX (bla
 
 If you find this tool useful, please cite the following paper:
 
-    @ARTICLE{lrbench2019,
-      author = {{Wu}, Yanzhao and {Liu}, Ling and {Bae}, Juhyun and {Chow}, Ka-Ho and
-      {Iyengar}, Arun and {Pu}, Calton and {Wei}, Wenqi and {Yu}, Lei and
-      {Zhang}, Qi},
-      title = "{Demystifying Learning Rate Polices for High Accuracy Training of Deep Neural Networks}",
-      journal = {arXiv e-prints},
-      keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
-      year = "2019",
-      month = "Aug",
-      eid = {arXiv:1908.06477},
-      pages = {arXiv:1908.06477},
-      archivePrefix = {arXiv},
-      eprint = {1908.06477},
-      primaryClass = {cs.LG},
-      adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv190806477W},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    @INPROCEEDINGS{lrbench2019,
+        author={Wu, Yanzhao and Liu, Ling and Bae, Juhyun and Chow, Ka-Ho and Iyengar, Arun and Pu, Calton and Wei, Wenqi and Yu, Lei and Zhang, Qi},
+        booktitle={2019 IEEE International Conference on Big Data (Big Data)},
+        title={Demystifying Learning Rate Policies for High Accuracy Training of Deep Neural Networks},
+        year={2019},
+        volume={},
+        number={},
+        pages={1971-1980},  
+        doi={10.1109/BigData47090.2019.9006104}
     }
-
+ 
 ## Problem
 
 
