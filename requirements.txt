@@ -3,3 +3,7 @@ numpy
 matplotlib
 # for the Caffe example
 jupyter
+# for running the server
+Django
+django-crispy-forms
+

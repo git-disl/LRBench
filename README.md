@@ -40,7 +40,17 @@ If you find this tool useful, please cite the following paper:
 
 
 ## Installation
+If you would like to use LRBench as a Python module, you can simply run the following command to install LRBench.
+
     pip install LRBench
+
+If you would like to have access to the web GUI of LRBench, you can follow these steps:
+
+    git clone https://github.com/git-disl/LRBench.git 
+    cd LRBench 
+    pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py runserver
 
 ## Supported Platforms
 
