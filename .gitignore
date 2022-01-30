@@ -105,3 +105,6 @@ venv.bak/
 
 # MacOS
 .DS_Store
+
+# Results
+*.txt
