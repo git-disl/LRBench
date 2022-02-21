@@ -112,3 +112,7 @@ venv.bak/
 # data
 data
 *.obj
+
+# model
+*.pth
+*.pt
