@@ -73,12 +73,3 @@ See the [people page](https://github.com/git-disl/LRBench/graphs/contributors) f
 Copyright (c) 20XX-20XX [Georgia Tech DiSL](https://github.com/git-disl)  
 Licensed under the [Apache License](LICENSE).
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TP71L8ZFZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TP71L8ZFZT');
-</script>
