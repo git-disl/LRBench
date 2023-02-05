@@ -35,6 +35,20 @@ If you find this tool useful, please cite the following paper:
         pages={1971-1980},  
         doi={10.1109/BigData47090.2019.9006104}
     }
+
+    @article{lrbench-tist,
+        author = {Wu, Yanzhao and Liu, Ling},
+        title = {Selecting and Composing Learning Rate Policies for Deep Neural Networks},
+        year = {2022},
+        publisher = {Association for Computing Machinery},
+        address = {New York, NY, USA},
+        issn = {2157-6904},
+        url = {https://doi.org/10.1145/3570508},
+        doi = {10.1145/3570508},
+        journal = {ACM Trans. Intell. Syst. Technol.},
+        month = {11},
+    }
+
  
 ## Problem
 
