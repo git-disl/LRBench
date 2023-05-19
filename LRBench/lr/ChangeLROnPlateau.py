@@ -1,3 +1,7 @@
+'''
+This module requires tensorflow and keras.
+'''
+
 import tensorflow as tf 
 from keras import backend
 import numpy as np
